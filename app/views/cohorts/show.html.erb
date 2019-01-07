@@ -1,0 +1,26 @@
+<h3>Cohort Details:</h3>
+
+  <div>
+    Cohort: <%= @cohort.name %>
+  </div>
+
+  <div>
+    Start Date: <%= @cohort.start_date %>
+  </div>
+
+  <div>
+    End Date: <%= @cohort.end_date %>
+  </div>
+
+  <div>
+    Instructors: <% @instructors.each do |instructor| %>[ <%= instructor.f_name%> <%= instructor.l_name%>, <%= link_to 'View', instructor_path(instructor) %> ] <% end %>
+  </div>
+
+  <div>
+    Students: <% @students.each do |student| %>[ <%= student.f_name%> <%= student.l_name%>, <%= link_to 'View', student_path(student) %> ] <% end %>
+  </div>
+
+<br>
+<div class="links">
+  <%= link_to 'Back', cohorts_path, 'class': 'btn btn-outline-secondary btn-lg btn-block' %>
+</div>
