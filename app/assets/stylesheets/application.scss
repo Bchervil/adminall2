@@ -67,6 +67,7 @@ body{
 
 nav ul {
   text-align: center;
+  text-transform: uppercase;
 }
 
 nav li {
@@ -80,8 +81,9 @@ nav li {
   color: $secondary-color;
 }
 
-
-
+.nav-item-dropdown{
+  background-color: $secondary-color;
+}
 .logo a, li a:hover{
   background-color: black;
   color: $thirdiary-color;
@@ -191,13 +193,14 @@ header, main, footer {
 
   .form-2 {
       /* Size and position */
-      font-family: 'Ubuntu', 'Lato', sans-serif;
-    font-weight: 400;
+    font-family:  sans-serif;
+    font-weight: 300;
+    text-transform: uppercase;
     /* Size and position */
     width: 500px;
     position: relative;
     margin: 60px auto 30px;
-    padding: 10px;
+    padding: 15px;
     overflow: hidden;
     color:white;
 

@@ -24,12 +24,12 @@
   </div>
 
   <div class="field">
-    <%= f.label :f_name %><br />
+    <%= f.label :first_name %><br />
     <%= f.text_field :f_name, autofocus: "off", autocomplete: "first name" %>
   </div>
 
   <div class="field">
-    <%= f.label :l_name %><br />
+    <%= f.label :last_name %><br />
     <%= f.text_field :l_name, autofocus: "off", autocomplete: "last name" %>
   </div>
 
@@ -42,12 +42,12 @@
     <%= f.label :birthday %><br />
     <%= f.date_field :birthday, autofocus: "off"  %>
   </div>
-
+<br>
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>
 <% end %>
-
+<br>
 <%= render "devise/shared/links" %>
 
 </div>
