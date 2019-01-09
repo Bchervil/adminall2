@@ -1,17 +1,17 @@
 <h3>Cohorts</h3>
 
-<p>This is where you can create, display, edit, and remove Cohorts</p>
+<p>Create, Display, Edit, and Remove Cohorts</p>
 
 <div class="main-img-div auto-margin">
-  <%= image_tag image_path('classroom.jpg'), alt: 'classroom image' %>
+  <%= image_tag image_path('boom.jpg'), alt: 'boom image' %>
 </div>
 
 <div class="content">
   <br />
   <%= link_to 'Add New Cohort', new_cohort_path, 'class': 'btn btn-outline-secondary btn-lg btn-block' %>
-  
+
   <br />
-  
+
   <% if @cohorts!=[] %>
 
     <table class="table table-striped table-hover">
@@ -36,9 +36,9 @@
             <%= link_to 'Delete', cohort, class: 'delete-cohort' %>
           </td>
         </tr>
-        <% end %> 
+        <% end %>
       </tbody>
     </table>
-    
+
   <% end %>
 </div>
