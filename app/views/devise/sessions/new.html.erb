@@ -1,13 +1,13 @@
-<form class="form-2">
 
 
-<div class="col-4 auto-margin">
+
+<div class="col-4 auto-margin form-2">
 
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div class="field">
       <%= f.label :email %><br />
       <%= f.email_field :email, autofocus: true, autocomplete: "email" %><br />
-      <small class="italic">"Test@test.com"</small><br />
+      <small class="italic"></small><br />
     </div>
 
     <br />
@@ -15,7 +15,7 @@
     <div class="field">
       <%= f.label :password %><br />
       <%= f.password_field :password, autocomplete: "off" %><br />
-      <small class="italic">"123123"</small><br />
+      <small class="italic"></small><br />
     </div>
 
     <br />
@@ -35,4 +35,3 @@
   <%= render "devise/shared/links" %>
 
 </div>
-</form>
