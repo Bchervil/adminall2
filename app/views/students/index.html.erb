@@ -33,7 +33,8 @@
             <td class="links">
               <%= link_to 'View', student_path(student) %>
               <%= link_to 'Edit', edit_student_path(student) %>
-              <%= link_to 'Delete', student, class: 'delete-student' %>
+              <%= link_to 'Delete', student_path(student), method: :delete, data: {confirm: 'Are you sure?'} %>
+
             </td>
           </tr>
           <% end %>
