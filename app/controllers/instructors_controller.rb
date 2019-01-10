@@ -31,16 +31,18 @@ class InstructorsController < ApplicationController
   end
 
   def destroy
-    @instructor = Instructor.destroy(params[:id])
-    @instructor.delete
-    redirect_to instructors_path
+    Instructor.find(params[:id]).destroy
+		redirect_to '/instructors'
+    # @instructor = Instructor.destroy(params[:id])
+    # @instructor.delete(instructor_path)
+    # redirect_to instructors_path
     # render json: {status: 'success', message: 'Instructor was successfully deleted'}
   end
 
   private
 
   def instructor_params
-    params.require(:instructor).permit(:f_name, :l_name, :birthday, :salary, :education)
+    params.require(:instructor).permit(:f_name, :l_name, :birthday, :age, :salary, :education)
   end
 
 end

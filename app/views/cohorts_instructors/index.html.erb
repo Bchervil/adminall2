@@ -33,7 +33,7 @@
           <td class="links">
             <%= link_to 'View Cohort', cohort_path(cohort_instructor.cohort.id) %>
             <%= link_to 'Edit', edit_cohorts_instructor_path(cohort_instructor) %>
-            <%= link_to 'Remove', cohort_instructor, class: 'delete-cohort_instructor' %>
+           <%= link_to 'Remove',cohorts_instructor_path(cohort_instructor), method: :delete, data: {confirm: 'Are you sure?'}, class: 'delete-instructor' %>
           </td>
         </tr>
         <% end %>

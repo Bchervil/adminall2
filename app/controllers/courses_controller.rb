@@ -31,9 +31,11 @@ class CoursesController < ApplicationController
   end
 
   def destroy
-    @courses = Course.destroy(params[:id])
-    @courses.delete
-    redirect_to courses_path
+    Course.find(params[:id]).destroy
+		redirect_to '/courses'
+    # @courses = Course.destroy(params[:id])
+    # @courses.delete
+    # redirect_to courses_path
     # render json: {status: 'success', message: 'Course was successfully deleted'}
   end
 

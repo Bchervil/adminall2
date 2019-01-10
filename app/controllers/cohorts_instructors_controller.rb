@@ -30,7 +30,7 @@ class CohortsInstructorsController < ApplicationController
 
   def update
     cohorts_instructor = CohortsInstructor.find(params[:id])
-    cohorts_instructor .update(cohort_instructor_params)
+    cohorts_instructor.update(cohort_instructor_params)
     redirect_to cohorts_instructors_path
   end
 

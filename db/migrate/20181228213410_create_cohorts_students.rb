@@ -2,7 +2,7 @@ class CreateCohortsStudents < ActiveRecord::Migration[5.2]
   def change
     create_table :cohorts_students do |t|
       t.integer :student_id
-      t.integer :cohort_id
+      t.integer :cohort_id, dependent: :destroy
 
       t.timestamps
     end

@@ -39,8 +39,10 @@ class CohortsController < ApplicationController
   end
 
   def destroy
-    Cohort.destroy(params[:id])
-    render json: {status: 'success', message: 'Cohort was successfully deleted'}
+    Cohort.find(params[:id]).destroy
+        redirect_to cohorts_path
+    # Cohort.destroy(params[:id])
+    # render json: {status: 'success', message: 'Cohort was successfully deleted'}
   end
 
   private

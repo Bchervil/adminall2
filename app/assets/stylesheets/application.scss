@@ -81,7 +81,10 @@ nav li {
   color: $secondary-color;
 }
 
+.nav-item li dropdown-show{
+background-color: white;
 
+}
 .logo a, li a:hover{
   background-color: black;
   color: $thirdiary-color;

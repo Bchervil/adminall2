@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(version: 2018_12_31_160639) do
     t.string "f_name"
     t.string "l_name"
     t.date "birthday"
+    t.integer "age"
     t.string "education"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -57,6 +58,7 @@ ActiveRecord::Schema.define(version: 2018_12_31_160639) do
     t.string "f_name"
     t.string "l_name"
     t.date "birthday"
+    t.integer "age"
     t.string "education"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

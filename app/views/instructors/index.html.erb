@@ -33,9 +33,9 @@
           <td class="links">
             <%= link_to 'View', instructor_path(instructor) %>
             <%= link_to 'Edit', edit_instructor_path(instructor) %>
-            <%= link_to 'Delete', instructor, class: 'delete-instructor' %>
+            <%= link_to 'Delete',instructor_path(instructor), method: :delete, data: {confirm: 'Are you sure?'}, class: 'delete-instructor' %>
           </td>
-        </tr>
+
         <% end %>
       </tbody>
     </table>

@@ -31,16 +31,18 @@ class StudentsController < ApplicationController
   end
 
   def destroy
-    @students = Student.find(params[:id])
-    @students.delete
-    redirect_to students_path
+    Student.find(params[:id]).destroy
+		redirect_to '/students'
+    # @students = Student.destroy(params[:id])
+    # @students.delete
+    # redirect_to students_path
     # render json: {status: 'success', message: 'Student was successfully deleted'}
   end
 
   private
 
   def student_params
-    params.require(:student).permit(:f_name, :l_name, :birthday, :education)
+    params.require(:student).permit(:f_name, :l_name, :birthday, :age, :education)
   end
 
 end
