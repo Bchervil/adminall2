@@ -31,8 +31,10 @@ class CoursesController < ApplicationController
   end
 
   def destroy
-    Course.destroy(params[:id])
-    render json: {status: 'success', message: 'Course was successfully deleted'}
+    @courses = Course.destroy(params[:id])
+    @courses.delete
+    redirect_to courses_path
+    # render json: {status: 'success', message: 'Course was successfully deleted'}
   end
 
   private

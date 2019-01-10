@@ -13,7 +13,7 @@ class CohortsStudentsController < ApplicationController
   def new
     @cohorts = Cohort.all.map{ |c| [c.name, c.id]}
     @students = Student.all.map{|i| [i.f_name, i.id]}
-    @cohorts_student = CohortsStudent.new 
+    @cohorts_student = CohortsStudent.new
   end
 
   def create
@@ -35,8 +35,10 @@ class CohortsStudentsController < ApplicationController
   end
 
   def destroy
-    CohortsStudent.destroy(params[:id])
-    render json: {status: 'success', message: 'Cohort Student was successfully deleted'}
+    @cohorts_students = CohortsStudent.destroy(params[:id])
+    @cohorts_students.delete
+    redirect_to cohorts_students_path
+    # render json: {status: 'success', message: 'Cohort Student was successfully deleted'}
   end
 
   private

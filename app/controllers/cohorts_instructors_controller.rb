@@ -1,7 +1,7 @@
 class CohortsInstructorsController < ApplicationController
   before_action :authenticate_user!
   skip_before_action :verify_authenticity_token, only: [:destroy]
-    
+
   def index
     @cohorts_instructors = CohortsInstructor.all.order(:cohort_id)
   end
@@ -13,7 +13,7 @@ class CohortsInstructorsController < ApplicationController
   def new
     @cohorts = Cohort.all.map{ |c| [c.name, c.id]}
     @instructors = Instructor.all.map{|i| ["#{i.f_name} #{i.l_name}", i.id]}
-    @cohorts_instructor = CohortsInstructor.new 
+    @cohorts_instructor = CohortsInstructor.new
   end
 
   def create
@@ -35,8 +35,10 @@ class CohortsInstructorsController < ApplicationController
   end
 
   def destroy
-    CohortsInstructor.destroy(params[:id])
-    render json: {status: 'success', message: 'Cohort Instructor was successfully deleted'}
+    @cohorts_instructor = CohortsInstructor.destroy(params[:id])
+    @cohorts_instructor.delete
+    redirect_to cohorts_instructors_path
+    # render json: {status: 'success', message: 'Cohort Instructor was successfully deleted'}
   end
 
   private
